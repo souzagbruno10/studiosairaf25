@@ -32,7 +32,7 @@ export default function QuemSouEu() {
         ></link>
         <title> Quem sou Eu</title>
       </Head>
-      ;
+
       <header className={styles.header}>
         <div className={styles.logoContainer}>
           <h1>

@@ -26,7 +26,7 @@ function Home() {
           content="Beleza e liberdade com Studio Sairaf."
         />
       </Head>
-      ;
+
       <header className={styles.header}>
         <div className={styles.logoContainer}>
           <h1>

@@ -32,7 +32,7 @@ export default function AgendamentoPage() {
         ></link>
         <title>Agendamento</title>
       </Head>
-      ;
+
       <header className={styles.header}>
         <div className={styles.logoContainer}>
           <h1>
