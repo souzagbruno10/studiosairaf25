@@ -1,0 +1,438 @@
+/* General Styles */
+.container {
+  font-family: "Georgia", serif;
+  background-color: #000000; /* Fundo preto */
+  color: #ffff; /* Texto branco */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: #000000; /* Fundo preto */
+  color: #ffd700; /* Amarelo dourado */
+  padding: 20px;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  border-bottom: 2px solid #ffd700; /* Amarelo dourado */
+}
+
+.heroSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 40px 20px;
+  background-color: #000000; /* Fundo preto */
+}
+
+.heroText {
+  max-width: 500px;
+  text-align: left;
+}
+
+.heroText h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffd700; /* Amarelo dourado */
+  text-align: left;
+}
+
+.heroText p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  line-height: 1.8;
+  color: #ffffff; /* Texto branco */
+  text-align: justify;
+}
+
+.ctaButton {
+  background-color: #ffd700; /* Amarelo dourado */
+  color: #000000; /* Texto preto */
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.ctaButton:hover {
+  background-color: #e6c200; /* Amarelo mais vibrante */
+}
+
+/* Hero Image */
+.heroImage {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-image: url("giStudio.png");
+  background-size: cover;
+  background-position: cover;
+  border-radius: 50%;
+  border: 5px solid #ffd700; /* Amarelo dourado */
+}
+
+.heroImage {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* Services Section */
+.servicesSection {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #000000; /* Fundo preto */
+}
+
+.servicesSection h2 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #ffd700; /* Amarelo dourado */
+}
+
+.servicesGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.serviceCard {
+  background-color: #333333; /* Fundo cinza escuro */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  text-align: left;
+}
+
+.serviceCard h3 {
+  color: #ffd700; /* Amarelo dourado */
+  margin-bottom: 10px;
+}
+
+.serviceCard p {
+  color: #ffffff; /* Texto branco */
+  line-height: 1.5;
+}
+
+/* Footer Section */
+.footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #000000; /* Fundo preto */
+  color: #ffd700; /* Amarelo dourado */
+}
+
+/* Responsividade para dispositivos móveis */
+
+@media (max-width: 768px) {
+  /* Ajusta a seção Hero para telas menores */
+  .heroSection {
+    flex-direction: column; /* Alinha os itens em coluna */
+    padding: 20px;
+  }
+
+  .heroText h2 {
+    font-size: 2rem; /* Tamanho da fonte reduzido */
+  }
+
+  .heroText p {
+    font-size: 1.1rem; /* Reduz o tamanho da fonte do parágrafo */
+    text-align: justify;
+  }
+
+  .ctaButton {
+    font-size: 0.9rem; /* Tamanho do botão ajustado */
+    padding: 8px 16px;
+  }
+
+  .heroImage {
+    width: 250px; /* Ajusta o tamanho da imagem */
+    height: 250px;
+  }
+
+  .servicesSection {
+    padding: 20px 10px;
+  }
+
+  .servicesGrid {
+    flex-direction: column; /* Coloca os cartões de serviço em coluna */
+    gap: 10px;
+  }
+
+  .serviceCard {
+    max-width: 100%; /* Faz os cartões ocuparem toda a largura */
+  }
+
+  /* Reduz tamanho da fonte nos cartões de serviço */
+  .serviceCard h3 {
+    font-size: 1.2rem;
+  }
+
+  .serviceCard p {
+    font-size: 1rem;
+  }
+}
+
+/* Responsividade para telas muito pequenas (exemplo: celulares em modo retrato) */
+@media (max-width: 480px) {
+  .header {
+    font-size: 2rem; /* Reduz o tamanho da fonte do header */
+  }
+
+  .heroText h2 {
+    font-size: 1.5rem; /* Reduz o tamanho da fonte do título */
+  }
+
+  .ctaButton {
+    font-size: 0.8rem; /* Tamanho do botão ainda menor */
+    padding: 6px 12px;
+  }
+
+  .servicesSection h2 {
+    font-size: 1.8rem; /* Tamanho da fonte menor */
+  }
+
+  .serviceCard h3 {
+    font-size: 1rem; /* Fonte ainda menor */
+  }
+
+  .serviceCard p {
+    font-size: 0.9rem; /* Reduz o tamanho da fonte do parágrafo */
+  }
+}
+
+/* Formulário de Agendamento */
+
+.agendamentoSection {
+  padding: 40px 20px;
+  background-color: #000000; /* Fundo preto */
+  text-align: center;
+}
+
+.agendamentoForm {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #333333; /* Fundo cinza escuro */
+  padding: 30px; /* Aumenta o padding dentro do formulário */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.agendamentoForm .formGroup {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.agendamentoForm label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  color: #ffd700; /* Amarelo dourado nos labels */
+}
+
+.agendamentoForm input,
+.agendamentoForm select {
+  width: 100%;
+  padding: 12px; /* Aumenta o padding para mais conforto */
+  border: 1px solid #ffd700;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box; /* Garante que o padding não afete a largura total */
+}
+
+.agendamentoForm button {
+  background-color: #ffd700; /* Botão amarelo dourado */
+  color: #000000; /* Texto preto */
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.agendamentoForm button:hover {
+  background-color: #e6c200; /* Amarelo mais vibrante no hover */
+}
+
+/* Footer Section */
+.footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #000000; /* Fundo preto */
+  color: #ffd700; /* Amarelo dourado */
+}
+
+.contactSection {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.contactSection p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.socialIcons a {
+  transition: transform 0.2s ease-in-out;
+}
+
+.socialIcons a:hover {
+  transform: scale(1.1);
+}
+
+/* Contêiner de ícones */
+.iconContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Espaçamento entre os ícones */
+  margin-top: 20px; /* Adiciona espaço acima dos ícones */
+}
+
+/* Estilos individuais para os ícones */
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Efeito de hover nos ícones */
+.icon:hover {
+  transform: scale(
+    1.1
+  ); /* Aumenta o tamanho do ícone quando o usuário passa o mouse */
+}
+.quemSouEuSection {
+  display: flex; /* Usando flexbox para organizar os itens lado a lado */
+  flex-direction: row; /* Mantém o layout na horizontal */
+  align-items: center; /* Centraliza os itens verticalmente */
+  justify-content: center; /* Garante espaço entre o texto e a imagem */
+  padding: 50px 10px; /* Reduzido o padding para tornar a seção mais compacta */
+  background-color: #000000; /* Fundo preto */
+  width: 90%; /* Garante que a seção ocupe 100% da largura disponível */
+  background-color: transparent;
+}
+
+.quemSouEuText {
+  max-width: 50%; /* Limita a largura do texto para garantir que a imagem tenha espaço */
+  text-align: left; /* Alinha o texto à esquerda */
+  margin: 0 auto 20px; /* Centraliza o texto e adiciona margem abaixo */
+  text-align: justify;
+}
+
+.quemSouEuText h2 {
+  font-size: 2rem; /* Ajuste o tamanho da fonte para um visual mais compacto */
+  margin-bottom: 10px; /* Espaçamento menor entre o título e o texto */
+  color: #ffd700; /* Amarelo dourado */
+  text-align: justify;
+}
+
+.quemSouEuText p {
+  font-size: 1.2rem; /* Ajuste o tamanho da fonte para melhor leitura */
+  margin-bottom: 15px; /* Menor espaço entre os parágrafos */
+  line-height: 1.7; /* Melhor espaçamento entre as linhas de texto */
+  color: #ffffff; /* Texto branco */
+  text-align: justify;
+}
+
+.quemSouEuImage {
+  width: 300px; /* Largura fixa da imagem */
+  height: 300px; /* Altura fixa da imagem */
+  background-image: url("giStudio2.jpg");
+  background-size: cover; /* Garante que a imagem ocupe toda a área do contêiner */
+  background-position: cover; /* Centraliza a imagem */
+  background-color: #000000;
+  border-radius: 100%; /* Torna a imagem redonda */
+  border: 5px solid #ffd700; /* Borda amarela */
+  overflow: hidden; /* Impede que a imagem transborde */
+  background-color: transparent; /* Garante fundo transparente */
+  margin-left: 50px; /* Espaço à esquerda da imagem */
+}
+
+.quemSouEuFooter {
+  text-align: center;
+  padding: 70px;
+  background-color: #000000; /* Fundo preto */
+  color: #ffd700; /* Amarelo dourado */
+}
+
+.quemSouEuFooter p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* Media Query para telas menores (como smartphones) */
+/* Media Query para telas menores (como smartphones) */
+@media (max-width: 480px) {
+  .quemSouEuSection {
+    flex-direction: column; /* Coloca o texto e a imagem em uma coluna */
+    text-align: center; /* Centraliza o texto */
+    word-spacing: -0.2px; /* Reduz o espaçamento entre as palavras */
+  }
+
+  .quemSouEuText {
+    max-width: 480px; /* Deixa o texto ocupar mais espaço em telas menores */
+    margin-bottom: 25px;
+    padding: 0 15px;
+    text-align: justify;
+    word-spacing: -0.2px; /* Ajuste mais suave para o espaçamento entre as palavras */
+  }
+
+  .quemSouEuImage {
+    width: 70vw; /* Torna a imagem maior em telas menores */
+    height: 70vw; /* Mantém a proporção da imagem */
+  }
+
+  .quemSouEuText h2 {
+    font-size: 1.8rem; /* Ajusta o tamanho da fonte para telas menores */
+    margin-top: -3px;
+    word-spacing: -0.2px; /* Ajuste mais suave no título */
+    text-align: justify;
+  }
+
+  .quemSouEuText p {
+    font-size: 1.1rem; /* Ajusta o tamanho da fonte */
+    text-align: justify;
+    word-spacing: -0.2px; /* Ajuste mais suave no parágrafo */
+  }
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: gray;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-radius: 8px;
+}
+
+.popup h3 {
+  margin-top: 0;
+}
+
+.popup button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background-color: #0056b3;
+}
