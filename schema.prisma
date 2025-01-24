@@ -3,8 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("postgresql://neondb_owner:npg_aFxPgw2Y0eXM@ep-divine-bush-a5psc377.us-east-2.aws.neon.tech/neondb?sslmode=require")
+  provider = "postgresql://neondb_owner:npg_aFxPgw2Y0eXM@ep-divine-bush-a5psc377.us-east-2.aws.neon.tech/neondb?sslmode=require")
 }
 
 // Definição do modelo 'agendamentos'
