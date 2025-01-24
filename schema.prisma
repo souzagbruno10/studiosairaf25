@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Definição do modelo 'agendamentos'
+model agendamentos {
+  id        Int      @id @default(autoincrement())
+  nome      String
+  data      DateTime
+  hora      String
+  servico   String
+}
