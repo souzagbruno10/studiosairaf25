@@ -1,0 +1,20 @@
+{
+  "name": "studiosairaf2025",
+  "version": "1.0.0",
+  "description": "Página construída para agendamento de clientes de um estúdio de beleza. Utilizando Node Js e React",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^6.2.1",
+    "mysql2": "^3.12.0",
+    "next": "^13.1.6",
+    "nodemailer": "^6.10.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.4.0"
+  }
+}
