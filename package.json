@@ -4,7 +4,8 @@
   "description": "Página construída para agendamento de clientes de um estúdio de beleza. Utilizando Node Js e React",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev"
+    "dev": "next dev",
+    "vercel-build": "next build"
   },
   "author": "",
   "license": "MIT",
