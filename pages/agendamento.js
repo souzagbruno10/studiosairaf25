@@ -1,5 +1,5 @@
 import React from "react";
-import { FaHome, FaUser, FaDollarSign } from "react-icons/fa"; // Importando os ícones de Home e Quem sou Eu
+import { FaHome, FaUser, FaDollarSign, FaCalendarAlt } from "react-icons/fa"; // Importando os ícones de Home e Quem sou Eu
 import { useRouter } from "next/router"; // Importando o hook useRouter
 import AgendamentoForm from "../components/AgendamentoForm"; // Importe o formulário de agendamento
 import styles from "../styles/Home.module.css"; // Reaproveitar os estilos
@@ -18,7 +18,7 @@ export default function AgendamentoPage() {
   };
 
   const handleDollarClick = () => {
-    router.push("/servicos"); // Redireciona para a página de serviços ou qualquer outra página que você queira
+    router.push("/valores"); // Redireciona para a página de serviços ou qualquer outra página que você queira
   };
 
   return (
@@ -57,6 +57,12 @@ export default function AgendamentoPage() {
         <div className={styles.iconContainer}>
           <div className={styles.icon} onClick={handleHomeClick}>
             <FaHome size={30} color="#ffd700" />
+          </div>
+          <div
+            className={styles.icon}
+            onClick={() => router.push("/agendamento")}
+          >
+            <FaCalendarAlt size={30} color="#ffd700" />
           </div>
           <div className={styles.icon} onClick={handleWhoAmIClick}>
             <FaUser size={30} color="#ffd700" />

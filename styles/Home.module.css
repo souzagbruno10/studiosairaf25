@@ -436,3 +436,179 @@
 .popup button:hover {
   background-color: #0056b3;
 }
+/* servicos */
+.valoresSection {
+  display: flex; /* Usando flexbox para organizar os itens lado a lado */
+  flex-direction: row; /* Mantém o layout na horizontal */
+  align-items: center; /* Centraliza os itens verticalmente */
+  justify-content: center; /* Garante espaço entre o texto e a imagem */
+  padding: 50px 10px; /* Reduzido o padding para tornar a seção mais compacta */
+  background-color: #000000; /* Fundo preto */
+  width: 90%; /* Garante que a seção ocupe 100% da largura disponível */
+  background-color: transparent;
+}
+
+.valoresText {
+  max-width: 50%; /* Limita a largura do texto para garantir que a imagem tenha espaço */
+  text-align: center; /* Alinha o texto à esquerda */
+  margin: 0 auto 0px; /* Centraliza o texto e adiciona margem abaixo */
+  text-align: justify;
+}
+
+.valoresText h2 {
+  font-size: 2.5rem; /* Ajuste o tamanho da fonte para um visual mais compacto */
+  margin-bottom: 10px; /* Espaçamento menor entre o título e o texto */
+  color: #ffd700; /* Amarelo dourado */
+  text-align: justify;
+}
+
+.valoresText p {
+  font-size: 1.2rem; /* Ajuste o tamanho da fonte para melhor leitura */
+  margin-bottom: 15px; /* Menor espaço entre os parágrafos */
+  line-height: 1.7; /* Melhor espaçamento entre as linhas de texto */
+  color: #ffffff; /* Texto branco */
+  text-align: justify;
+}
+
+.valoresFooter {
+  text-align: center;
+  padding: 70px;
+  background-color: #000000; /* Fundo preto */
+  color: #ffd700; /* Amarelo dourado */
+}
+
+.valoresFooter p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.valoresButton {
+  background-color: #ffd700; /* Botão amarelo */
+  color: #000000; /* Texto preto */
+  border: none;
+  padding: 1px 5px;
+  font-size: 0rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Media Query para telas menores (como smartphones) */
+/* Media Query para telas menores (como smartphones) */
+@media (max-width: 480px) {
+  .valoresSection {
+    flex-direction: column; /* Coloca o texto e a imagem em uma coluna */
+    text-align: center; /* Centraliza o texto */
+    word-spacing: -0.2px; /* Reduz o espaçamento entre as palavras */
+  }
+
+  .valoresText {
+    max-width: 480px; /* Deixa o texto ocupar mais espaço em telas menores */
+    margin-bottom: 25px;
+    padding: 0 15px;
+    text-align: justify;
+    word-spacing: -0.2px; /* Ajuste mais suave para o espaçamento entre as palavras */
+  }
+
+  .valoresImage {
+    width: 70vw; /* Torna a imagem maior em telas menores */
+    height: 70vw; /* Mantém a proporção da imagem */
+  }
+
+  .valoresText h2 {
+    font-size: 1.8rem; /* Ajusta o tamanho da fonte para telas menores */
+    margin-top: -3px;
+    word-spacing: -0.2px; /* Ajuste mais suave no título */
+    text-align: justify;
+  }
+
+  .valoresText p {
+    font-size: 1.1rem; /* Ajusta o tamanho da fonte */
+    text-align: justify;
+    word-spacing: -0.2px; /* Ajuste mais suave no parágrafo */
+  }
+
+  .valoresButton {
+    background-color: #ffd700; /* Botão amarelo */
+    color: #000000; /* Texto preto */
+    border: none;
+    padding: 0px 5px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: gray;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 8px;
+  }
+
+  .popup h3 {
+    margin-top: 0;
+  }
+
+  .popup button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .popup button:hover {
+    background-color: #0056b3;
+  }
+}
+
+.flipContainer {
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}
+
+.cardFront,
+.cardBack {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.cardFront img {
+  width: 100%;
+  height: 100%;
+  object-fit: visible;
+  border-radius: 10px;
+}
+
+.cardBack {
+  background: #ffd700;
+  color: #000;
+  transform: rotateY(180deg);
+  font-size: 20px;
+  font-weight: bold;
+}

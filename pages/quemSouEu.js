@@ -2,7 +2,7 @@ import React from "react";
 import { useRouter } from "next/router";
 import Image from "next/image"; // Importação do componente Image
 import styles from "../styles/Home.module.css"; // Reaproveitar os estilos
-import { FaHome, FaUser, FaDollarSign } from "react-icons/fa"; // Importando os ícones de Home e Quem sou Eu
+import { FaHome, FaUser, FaDollarSign, FaCalendarAlt } from "react-icons/fa"; // Importando os ícones de Home e Quem sou Eu
 import Head from "next/head";
 
 export default function QuemSouEu() {
@@ -18,7 +18,7 @@ export default function QuemSouEu() {
   };
 
   const handleDollarClick = () => {
-    router.push("/servicos"); // Redireciona para a página de serviços ou qualquer outra página que você queira
+    router.push("/valores"); // Redireciona para a página de serviços ou qualquer outra página que você queira
   };
 
   return (
@@ -55,6 +55,12 @@ export default function QuemSouEu() {
         <div className={styles.iconContainer}>
           <div className={styles.icon} onClick={handleHomeClick}>
             <FaHome size={30} color="#ffd700" />
+          </div>
+          <div
+            className={styles.icon}
+            onClick={() => router.push("/agendamento")}
+          >
+            <FaCalendarAlt size={30} color="#ffd700" />
           </div>
           <div className={styles.icon} onClick={handleWhoAmIClick}>
             <FaUser size={30} color="#ffd700" />
