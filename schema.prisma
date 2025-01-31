@@ -3,15 +3,15 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider = "mysql"
+  url      = env("DATABASE_URL_MYSQL") // Alterar para DATABASE_URL_MYSQL se você renomeou a variável no .env
 }
 
 // Definição do modelo 'agendamentos'
 model agendamentos {
-  id        Int      @id @default(autoincrement())
-  nome      String
-  data      DateTime
-  hora      String
-  servico   String
+  id      Int      @id @default(autoincrement())
+  nome    String
+  data    DateTime
+  hora    String
+  servico String
 }
