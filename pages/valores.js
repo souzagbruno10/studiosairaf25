@@ -63,7 +63,7 @@ export default function Valores() {
     {
       src: "/images/pagamento.jpg",
       valor: " sua satisfação! ",
-      nome: " Agenda já 🖤",
+      nome: " Agende já 🖤",
     },
   ];
 
