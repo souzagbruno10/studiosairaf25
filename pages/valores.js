@@ -75,7 +75,7 @@ export default function Valores() {
 
       // Assim que desvirar, já muda a imagem imediatamente
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000);
+    }, 2000);
   };
 
   return (
