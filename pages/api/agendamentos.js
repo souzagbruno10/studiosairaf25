@@ -1,25 +1,4 @@
-import mysql from "mysql2/promise";
 import nodemailer from "nodemailer";
-
-// Next.js já carrega variáveis automaticamente do .env.local, então dotenv não é necessário
-
-// Função para criar conexão com o banco de dados
-const createDBConnection = async () => {
-  try {
-    const connection = await mysql.createConnection({
-      host: process.env.DB_HOST,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME,
-      port: process.env.DB_PORT,
-    });
-    console.log("✅ Conectado ao banco de dados!");
-    return connection;
-  } catch (error) {
-    console.error("❌ Erro ao conectar ao banco de dados:", error);
-    throw error;
-  }
-};
 
 // Função para enviar e-mail
 const sendEmailNotification = async (agendamento) => {
@@ -69,22 +48,21 @@ export default async function handler(req, res) {
   }
 
   try {
-    const db = await createDBConnection();
-    const query =
-      "INSERT INTO agendamentos (nome, data, hora, servico) VALUES (?, ?, ?, ?)";
-    await db.execute(query, [nome, data, hora, servico]);
+    // Removemos a parte do banco de dados
 
     const agendamento = { nome, data, hora, servico };
+
+    // Envia a notificação por e-mail
     await sendEmailNotification(agendamento);
 
-    await db.end();
-    console.log("✅ Agendamento salvo no banco com sucesso!");
+    console.log("✅ Agendamento confirmado!");
 
+    // Resposta para o cliente
     return res
       .status(200)
       .json({ message: "Agendamento realizado com sucesso!" });
   } catch (err) {
     console.error("❌ Erro ao processar o agendamento:", err);
-    return res.status(500).json({ message: "Erro ao salvar agendamento." });
+    return res.status(500).json({ message: "Erro ao processar agendamento." });
   }
 }
