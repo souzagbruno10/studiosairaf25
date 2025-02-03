@@ -21,7 +21,7 @@ const sendEmailNotification = async (agendamento) => {
       from: `\"Agendamentos\" <${process.env.EMAIL_USER}>`,
       to: process.env.NOTIFICATION_EMAIL, // Pode ser configurado no .env
       subject: "Novo Agendamento Confirmado",
-      text: `Novo Agendamento Confirmado\n\nNome: ${agendamento.nome}\nServiço: ${agendamento.servico}\nData: ${agendamento.data}\nHora: ${agendamento.hora}\n\nDetalhes: Este é um e-mail automático gerado após o agendamento ser realizado com sucesso.`,
+      text: `Novo Agendamento Confirmado\n\nNome: ${agendamento.nome}\nWhatsApp: ${agendamento.whats}\nServiço: ${agendamento.servico}\nData: ${agendamento.data}\nHora: ${agendamento.hora}\n\nDetalhes: Este é um e-mail automático gerado após o agendamento ser realizado com sucesso.`,
     };
 
     console.log("📧 Enviando e-mail para:", mailOptions.to);
@@ -41,7 +41,7 @@ export default async function handler(req, res) {
 
   const { nome, data, hora, servico } = req.body;
 
-  if (!nome || !data || !hora || !servico) {
+  if (!nome || !whats || !data || !hora || !servico) {
     return res
       .status(400)
       .json({ message: "Todos os campos são obrigatórios." });
@@ -50,7 +50,7 @@ export default async function handler(req, res) {
   try {
     // Removemos a parte do banco de dados
 
-    const agendamento = { nome, data, hora, servico };
+    const agendamento = { nome, whats, data, hora, servico };
 
     // Envia a notificação por e-mail
     await sendEmailNotification(agendamento);
