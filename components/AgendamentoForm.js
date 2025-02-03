@@ -5,9 +5,11 @@ import styles from "../styles/Home.module.css";
 function AgendamentoForm() {
   const [formData, setFormData] = useState({
     nome: "",
+    whats: "",
     data: "",
     hora: "",
     servico: "",
+    
   });
 
   const [showPopup, setShowPopup] = useState(false); // Para controlar a exibição do pop-up
@@ -68,6 +70,17 @@ function AgendamentoForm() {
             id="nome"
             name="nome"
             value={formData.nome}
+            onChange={handleChange}
+            required
+          />
+        </div>
+               <div className={styles.formGroup}>
+          <label htmlFor="whats">WhatsApp</label>
+          <input
+            type="tel"
+            id="whats"
+            name="whats"
+            value={formData.whats}
             onChange={handleChange}
             required
           />
