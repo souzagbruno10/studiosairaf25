@@ -84,7 +84,7 @@ function AgendamentoForm() {
             value={formData.whats}
             onChange={handleChange}
             pattern="\d{11}"
-            placeholder="11912345678"
+            placeholder="seu número do Whatsapp"
             required
           />
         </div>
