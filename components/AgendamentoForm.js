@@ -41,8 +41,10 @@ function AgendamentoForm() {
       if (response.ok) {
         // Exibe a janela pop-up de confirmação com as informações do agendamento
         setMessage(
-          `Agendamento confirmado!\nCliente: ${formData.nome}\nWhatsApp: ${formData.whats}\nServiço: ${formData.servico}\nData: ${formData.data}\nHora: ${formData.hora}`
-        );
+         setMessage(
+  `Agendamento confirmado!\nCliente: ${formData.nome}\nWhatsApp: (${formData.whats.slice(0,2)}) ${formData.whats.slice(2,7)}-${formData.whats.slice(7)}\nServiço: ${formData.servico}\nData: ${formData.data}\nHora: ${formData.hora}`
+);
+
         setShowPopup(true); // Mostra o pop-up de confirmação
       } else {
         setMessage(result.message || "Erro ao realizar agendamento.");
@@ -82,6 +84,7 @@ function AgendamentoForm() {
             name="whats"
             value={formData.whats}
             onChange={handleChange}
+            pattern="{11}" 
             required
           />
         </div>
