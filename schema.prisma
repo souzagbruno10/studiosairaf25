@@ -11,6 +11,7 @@ datasource db {
 model agendamentos {
   id      Int      @id @default(autoincrement())
   nome    String
+  whats   String
   data    DateTime
   hora    String
   servico String
