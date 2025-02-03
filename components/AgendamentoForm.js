@@ -42,7 +42,7 @@ function AgendamentoForm() {
         // Exibe a janela pop-up de confirmação com as informações do agendamento
         setMessage(
          setMessage(
-  `Agendamento confirmado!\nCliente: ${formData.nome}\nWhatsApp: (${formData.whats.slice(0,2)}) ${formData.whats.slice(2,7)}-${formData.whats.slice(7)}\nServiço: ${formData.servico}\nData: ${formData.data}\nHora: ${formData.hora}`
+  `Agendamento confirmado!\nCliente: ${formData.nome}\nWhatsApp: ${formData.whats}\nServiço: ${formData.servico}\nData: ${formData.data}\nHora: ${formData.hora}`
 );
 
         setShowPopup(true); // Mostra o pop-up de confirmação
