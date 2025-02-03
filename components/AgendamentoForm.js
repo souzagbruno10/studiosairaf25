@@ -9,7 +9,6 @@ function AgendamentoForm() {
     data: "",
     hora: "",
     servico: "",
-    
   });
 
   const [showPopup, setShowPopup] = useState(false); // Para controlar a exibição do pop-up
@@ -23,32 +22,32 @@ function AgendamentoForm() {
     });
   };
 
+  const formatWhatsApp = (whats) => {
+    return `(${whats.slice(0, 2)}) ${whats.slice(2, 7)}-${whats.slice(7)}`;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      // Envia os dados para a API no backend
       const response = await fetch("/api/agendamentos", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData), // Envia os dados do formulário
+        body: JSON.stringify(formData),
       });
 
       const result = await response.json();
 
       if (response.ok) {
-        // Exibe a janela pop-up de confirmação com as informações do agendamento
         setMessage(
-         setMessage(
-  `Agendamento confirmado!\nCliente: ${formData.nome}\nWhatsApp: ${formData.whats}\nServiço: ${formData.servico}\nData: ${formData.data}\nHora: ${formData.hora}`
-);
-
-        setShowPopup(true); // Mostra o pop-up de confirmação
+          `Agendamento confirmado!\nCliente: ${formData.nome}\nWhatsApp: ${formatWhatsApp(formData.whats)}\nServiço: ${formData.servico}\nData: ${formData.data}\nHora: ${formData.hora}`
+        );
+        setShowPopup(true);
       } else {
         setMessage(result.message || "Erro ao realizar agendamento.");
-        setShowPopup(true); // Exibe mensagem de erro
+        setShowPopup(true);
       }
     } catch (error) {
       console.error("Erro ao enviar o agendamento:", error);
@@ -58,7 +57,7 @@ function AgendamentoForm() {
   };
 
   const closePopup = () => {
-    setShowPopup(false); // Fecha o pop-up quando o usuário clicar no botão "Fechar"
+    setShowPopup(false);
   };
 
   return (
@@ -76,7 +75,7 @@ function AgendamentoForm() {
             required
           />
         </div>
-               <div className={styles.formGroup}>
+        <div className={styles.formGroup}>
           <label htmlFor="whats">WhatsApp</label>
           <input
             type="tel"
@@ -84,7 +83,8 @@ function AgendamentoForm() {
             name="whats"
             value={formData.whats}
             onChange={handleChange}
-            pattern="{11}" 
+            pattern="\d{11}"
+            placeholder="11912345678"
             required
           />
         </div>
@@ -121,40 +121,22 @@ function AgendamentoForm() {
           >
             <option value="">Escolha um Serviço</option>
             <option value="Design Simples">Design Simples - R$ 20,00</option>
-            <option value="Design com Henna">
-              Design com Henna - R$ 45,00
-            </option>
+            <option value="Design com Henna">Design com Henna - R$ 45,00</option>
             <option value="Brow Lamination">Brow Lamination - R$ 75,00</option>
-            <option value="Volume Brasileiro">
-              Volume Brasileiro - R$ 110,00
-            </option>
-            <option value="Volume Brasileiro Manutenção">
-              Volume Brasileiro Manutenção - R$ 75,00
-            </option>
+            <option value="Volume Brasileiro">Volume Brasileiro - R$ 110,00</option>
+            <option value="Volume Brasileiro Manutenção">Volume Brasileiro Manutenção - R$ 75,00</option>
             <option value="Volume Egípcio">Volume Egípcio - R$ 125,00</option>
-            <option value="Volume Egípcio Manutenção">
-              Volume Egípcio Manutenção - R$ 85,00
-            </option>
+            <option value="Volume Egípcio Manutenção">Volume Egípcio Manutenção - R$ 85,00</option>
             <option value="Volume 5D">Volume 5D - R$ 125,00</option>
-            <option value="Volume 5D Manutenção">
-              Volume 5D Manutenção - R$ 85,00
-            </option>
+            <option value="Volume 5D Manutenção">Volume 5D Manutenção - R$ 85,00</option>
             <option value="Volume 8D">Volume 8D - R$ 145,00</option>
-            <option value="Volume 8D Manutenção">
-              Volume 8D Manutenção - R$ 100,00
-            </option>
+            <option value="Volume 8D Manutenção">Volume 8D Manutenção - R$ 100,00</option>
             <option value="Mega Brasileiro">Mega Brasileiro - R$ 145,00</option>
-            <option value="Mega Brasileiro Manutenção">
-              Mega Brasileiro Manutenção - R$ 100,00
-            </option>
+            <option value="Mega Brasileiro Manutenção">Mega Brasileiro Manutenção - R$ 100,00</option>
             <option value="Mega 5D">Mega 5D - 145,00</option>
-            <option value="Mega 5D Manutenção">
-              Mega 5D Manutenção - R$ 100,00
-            </option>
+            <option value="Mega 5D Manutenção">Mega 5D Manutenção - R$ 100,00</option>
             <option value="Fox Eyes">Fox Eyes - R$ 125,00</option>
-            <option value="Fox Eyes Manutenção">
-              Fox Eyes Manutenção - R$ 85,00
-            </option>
+            <option value="Fox Eyes Manutenção">Fox Eyes Manutenção - R$ 85,00</option>
           </select>
         </div>
         <button type="submit" className={styles.ctaButton}>
@@ -162,7 +144,6 @@ function AgendamentoForm() {
         </button>
       </form>
 
-      {/* Pop-up de Confirmação */}
       {showPopup && (
         <div className={styles.popup}>
           <h3>Confirmação do Agendamento</h3>
@@ -171,7 +152,6 @@ function AgendamentoForm() {
         </div>
       )}
 
-      {/* Ícones de contato */}
       <div className={styles.contactSection}>
         <p>Entre em contato conosco:</p>
         <div className={styles.socialIcons}>
