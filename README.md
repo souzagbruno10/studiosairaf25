@@ -1,7 +1,8 @@
 
 # Studio 💛 Sairaf
 
-Site criado para divulgação e agendamento de serviços de estética e manutenção de cílios e sobrancelhas. Este projeto visou contemplar pequenos negócios periféricos com a criação de um website como ponto de partida para profissionalização desses serviços.
+Site criado para divulgação e agendamento de serviços de estética e manutenção de cílios e sobrancelhas do estúdio de beleza 
+Studio Sairaf. Este projeto visou contemplar empreendedores de bairros da periferia de SP com um website como ponto de partida para profissionalização desses serviços.
 [Studio Sairaf](https://www.studiosairaf.com.br) 💛
 
 # 🔧 Ferramentas de Desenvolvimento
